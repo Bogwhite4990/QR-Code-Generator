@@ -16,10 +16,12 @@ bash
 
 ```cd your_repository```
 Modify the script: Open the script in your preferred code editor and modify the following variables to suit your needs:
-url: The URL of the image you want to use for the QR code.
-size: The desired size of the image (in pixels) you want to paste onto the QR code.
-add_data(): The data you want to encode in the QR code.
-Run the script: Once you have made the necessary modifications, you can run the script by running the following command in the terminal:
+
+
+```url:``` The URL of the image you want to use for the QR code.
+```size:``` The desired size of the image (in pixels) you want to paste onto the QR code.
+```add_data():``` The data you want to encode in the QR code.
+```Run the script:``` Once you have made the necessary modifications, you can run the script by running the following command in the terminal:
 
 ```python qr_code_generator.py```
 This will generate a QR code with the image pasted onto it and save it as qr_code.png in the data/src directory.
@@ -47,6 +49,7 @@ This line imports the requests library, which is used to download the image from
 ```url = 'https://tinypng.com/images/social/website.jpg'
 response = requests.get(url, stream=True)
 face = Image.open(response.raw)```
+
 These lines download the image from the specified URL and open it as a PIL image object.
 
 
@@ -57,6 +60,7 @@ qr = qrcode.QRCode(
     box_size=10,
     border=4,
 )```
+
 This creates a new QR code object with the specified version, error correction level, box size, and border size.
 
 
@@ -68,6 +72,7 @@ These lines add the data you want to encode in the QR code and generate the QR c
 
 ```
 img_qr_big = qr.make_image(fill_color="yellow", back_color="black").convert('RGB')```
+
 This generates a PIL image object of the QR code with the specified fill color, background color, and image mode.
 
 
