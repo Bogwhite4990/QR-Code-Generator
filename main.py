@@ -2,6 +2,7 @@ import qrcode
 from PIL import Image
 import requests
 
+# Here you can put any link from any image
 url = 'https://tinypng.com/images/social/website.jpg'
 response = requests.get(url, stream=True)
 face = Image.open(response.raw)
